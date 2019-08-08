@@ -1,0 +1,15 @@
+C:\Users\tojiba\Desktop\TestForm\SummaryDataGridView\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\tojiba\Desktop\TestForm\SummaryDataGridView\bin\Debug\SummaryDataGridView.dll
+C:\Users\tojiba\Desktop\TestForm\SummaryDataGridView\bin\Debug\SummaryDataGridView.pdb
+C:\Users\tojiba\Desktop\TestForm\SummaryDataGridView\obj\Debug\SummaryDataGridView.dll
+C:\Users\tojiba\Desktop\TestForm\SummaryDataGridView\obj\Debug\SummaryDataGridView.pdb
+C:\未同步\示例\DataGridView Filter\C#\SummaryDataGridView\bin\Debug\SummaryDataGridView.dll
+C:\未同步\示例\DataGridView Filter\C#\SummaryDataGridView\bin\Debug\SummaryDataGridView.pdb
+C:\未同步\示例\DataGridView Filter\C#\SummaryDataGridView\obj\Debug\SummaryDataGridView.dll
+C:\未同步\示例\DataGridView Filter\C#\SummaryDataGridView\obj\Debug\SummaryDataGridView.pdb
+C:\未同步\示例\DataGridView Filter\C#\SummaryDataGridView\obj\Debug\SummaryDataGridView.csprojResolveAssemblyReference.cache
+C:\code\重庆物流\wms\SummaryDataGridView\obj\Debug\SummaryDataGridView.dll
+C:\code\重庆物流\wms\SummaryDataGridView\obj\Debug\SummaryDataGridView.pdb
+C:\code\重庆物流\wms\SummaryDataGridView\bin\Debug\SummaryDataGridView.dll
+C:\code\重庆物流\wms\SummaryDataGridView\bin\Debug\SummaryDataGridView.pdb
+C:\code\重庆物流\wms\SummaryDataGridView\obj\Debug\ResolveAssemblyReference.cache
