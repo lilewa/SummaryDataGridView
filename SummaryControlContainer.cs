@@ -93,7 +93,7 @@ namespace SummaryDataGridView
         private void dgv_ColumnDisplayIndexChanged(object sender, DataGridViewColumnEventArgs e)
         {
             //resizeSumBoxes();
-            reCreateSumBoxes();
+           // reCreateSumBoxes();
         }
 
         private void dgv_ColumnStateChanged(object sender, DataGridViewColumnStateChangedEventArgs e)
@@ -268,15 +268,30 @@ namespace SummaryDataGridView
                                         {
                                             sumBox.Tag = Convert.ToDecimal(sumBox.Tag) + Convert.ToDecimal(dgvCell.Value);
                                         }
+                                        else
+                                        {
+                                            sumBox.Tag = Convert.ToInt32(sumBox.Tag) + 1;
+                                        }
+                                        //sumBox.Text = string.Format("{0}", sumBox.Tag);
 
-                                        sumBox.Text = string.Format("{0}", sumBox.Tag);
-                                       // sumBox.Invalidate();
                                     }
+                                      
                                 }
+                                
                             }
+                            
                         }
                     }
                 }
+                foreach (DataGridViewColumn dgvColumn in sumBoxHash.Keys)
+                {
+                    ReadOnlyTextBox sumBox = (ReadOnlyTextBox)sumBoxHash[dgvColumn];
+                    sumBox.Text = string.Format("{0}", sumBox.Tag);
+                    dgv.summaryValue[dgvColumn.Name] = sumBox.Text;
+                    sumBox.Invalidate();
+                    //dgv.summaryValue[dgvColumn.Name] = ((ReadOnlyTextBox)sumBoxHash[dgvColumn]).Text;
+                }
+      
                 //foreach (DataGridViewColumn dgvColumn in sumBoxHash.Keys)
                 //{
                 //    ReadOnlyTextBox sumBox = (ReadOnlyTextBox)sumBoxHash[dgvColumn];

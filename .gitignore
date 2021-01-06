@@ -1,0 +1,17 @@
+Settings.Designer.cs
+Settings.settings
+licenses.licx
+*.pfx
+*.csproj.user
+*.config
+obj/
+bin/
+!config/**/*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+.vs/

@@ -155,6 +155,7 @@ namespace SummaryDataGridView
         bool firstBind;
         private int sortOrder = 0;
         bool sourceChanged;
+        public Dictionary<string, string> summaryValue;
         #endregion
 
         #region Constructor
@@ -196,7 +197,7 @@ namespace SummaryDataGridView
             BackgroundColor = Color.WhiteSmoke;
             RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-
+            summaryValue = new Dictionary<string, string>();
         }
 
         
@@ -210,7 +211,7 @@ namespace SummaryDataGridView
                 firstBind = false;
 
 
-                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;//自动调整单元格大小适应内容
+              //  AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;//自动调整单元格大小适应内容
                 SelectionMode = DataGridViewSelectionMode.FullRowSelect;//单击选择整行
                 MultiSelect = false;//不允许多选单元格
 
@@ -313,14 +314,17 @@ namespace SummaryDataGridView
                    
                 }
                 hScrollBar.SmallChange = 0;
+                int result = 0;
                 if (RowHeadersVisible)
                 {
-                    hScrollBar.LargeChange = Width - RowHeadersWidth - 2;
+                    result = Width - RowHeadersWidth - 2;
                 }
                 else
                 {
-                    hScrollBar.LargeChange = Width - 3;
+                    result = Width - 3;
                 }
+                if (result > 0)
+                    hScrollBar.LargeChange = result;
 
             }
 
@@ -351,6 +355,13 @@ namespace SummaryDataGridView
             resizeHScrollBar();
         }
         private void DataGridControlSum_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            calculateColumnsWidth();
+            summaryControl.Width = columnsWidth;
+            hScrollBar.Maximum = Convert.ToInt32(columnsWidth);
+            resizeHScrollBar(); 
+        }
+        private void  ColumnWidthChanged(object sender, DataGridViewColumnEventArgs e)
         {
             calculateColumnsWidth();
             summaryControl.Width = columnsWidth;
@@ -510,8 +521,8 @@ namespace SummaryDataGridView
         {
             if (Parent != null)
             {
-                //  calculateColumnsWidth();
-                // resizeHScrollBar();
+                calculateColumnsWidth();
+                resizeHScrollBar();
                 AjustScroll();
                 adjustSumControlToGrid();
                 adjustScrollbarToSummaryControl();
